@@ -5,6 +5,8 @@ const {check, validationResult} = require('express-validator')
 const jwt = require('jsonwebtoken')
 const config = require("config")
 const router = new Router();
+const fileService = require('../services/fileService')
+const File = require('../models/File')
 const authMiddleware = require('../middleware/auth.middleware')
 
 
@@ -31,6 +33,7 @@ router.post('/registration',
 
       const user = new User({email, password: hashPassword})
       await user.save()
+      await fileService.createDir(new File({user: user.id, name: ''}))
       return res.json({message: "User was created"})
     } catch (e) {
       console.log(e)

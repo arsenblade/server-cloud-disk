@@ -1,5 +1,6 @@
 {
   "serverPort": 5000,
   "dbUrl": "mongodb+srv://ranzor:Love0070@cluster0.etrbm0g.mongodb.net/cloud-disk?retryWrites=true&w=majority",
-  "secretKey": "dsofjwfprjfp"
+  "secretKey": "dsofjwfprjfp",
+  "filePath": "C:\\React-jun\\google-disk\\server\\files"
 }
